@@ -11,8 +11,13 @@
         <div class="nav-logo">
             <a href=""> <img src="../Images/Rectangle 2.svg" alt="Advanced Encryption Logo"> </a>
         </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div>
-            <nav class="navbar">
+            <nav class="navbar" id="navbar">
                 <ul>
                     <li><a href="">HOME</a></li>
                     <li><a href="./Content.html">CONTENT</a></li>
@@ -39,5 +44,22 @@
         <p>© 2025 Advanced Encryption. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
