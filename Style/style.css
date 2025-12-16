@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0%;
     border: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
 }
 .header {
     width: 100%;
@@ -161,7 +167,7 @@
     position: absolute; 
     bottom: 0;         
     left: 150px;            
-    width: 100%;       
+    width: 94%;       
     height: auto;       
     padding: 90px;
     display: flex;
@@ -258,7 +264,7 @@
     font-style: bold;
 }
 .contact-section {
-    margin-top: 90px;
+    margin-top: 85px;
     padding-top: 15px;
     padding-bottom: 80px;
     display: flex;
@@ -367,7 +373,7 @@
 }
 .reference-section {
     padding: 55px 0px 100px; 
-    margin-top: 90px;
+    margin-top: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,7 +424,7 @@
 }
 .footer {
     position: absolute;
-    bottom: 0;
+    bottom: -23px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -430,12 +436,12 @@
     width: 30%;
     display: flex;
     justify-content: space-evenly;
-    color: #e0e0e0;
+    color: #000000;
     transition: color 0.3s;
 }
 .copyright {
     font-size: 12px;
-    color: #a0a0a0;
+    color: #000000;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -444,6 +450,7 @@
 
 .copyright p{
     margin-right: 0;
+    color: white;
 }
 
 /* === Hamburger: place at top-right and mobile header fixes === */
@@ -458,6 +465,7 @@
     z-index: 1002;
     padding: 6px;
     background: transparent;
+    margin-right: 50px;
 }
 
 .hamburger span {
@@ -472,6 +480,7 @@
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        margin: 5px 80px 4px 15px;
     }
 
     .header {
@@ -487,6 +496,23 @@
     /* keep main content clear of the fixed header */
     main {
         padding-top: 100px;
+    }
+
+    /* Contact page footer sticks to bottom on mobile */
+    .contact-us {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .contact-us main {
+        flex: 1;
+    }
+
+    .contact-us .footer {
+        position: relative;
+        bottom: auto;
+        margin-top: auto;
     }
 
     /* Mobile nav stays full-screen below header */
@@ -517,7 +543,7 @@
         margin: 0;
         font-size: 52px;
         line-height: 1.05;
-        margin-top: 6px;
+        margin-top: 100px;
         padding: 0 16px;
         word-break: break-word;
     }
@@ -699,6 +725,17 @@
         font-size: 16px;
     }
 
+    .contact-section {
+        margin-top: -14px;
+        padding-top: 15px;
+        padding-bottom: 80px;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        width: 100%;
+        min-height: auto;
+    }
+
     .contact-container {
         flex-direction: column;
         gap: 40px;
@@ -784,6 +821,10 @@
 }
 
 @media (max-width: 480px) {
+    .hamburger {
+        margin: 15px;
+    }
+
     .hh {
         font-size: 50px;
         margin-left: 15px;
@@ -929,6 +970,10 @@
 }
 
 @media (max-width: 360px) {
+    .hamburger {
+        margin: 10px;
+    }
+
     .hh {
         font-size: 40px;
         margin-left: 10px;
